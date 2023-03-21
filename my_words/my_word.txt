@@ -1,0 +1,44 @@
+logical // 逻辑
+apple // 苹果
+shuffle // 打乱
+test // 测试
+
+companion /kəmˈpænɪən/ n. 共事者；同伴
+rig       /rɪg/        vt. 操纵，垄断  n. 船桅（或船帆等）的装置；成套器械
+input*    /ˈɪnput/     n. 投入，输入；输入的数据  vt. 把……输入计算机
+merely*   [ˈmiəli]     ad. 仅仅，只不过
+impart    /ɪmˈpɑːt/    vt. 给予，赋予；传授；告知，透露
+forfeit*  /ˈfɔːfɪt/    v. （因犯规等而）丧失，失去  n. 罚款；代价
+calorie   /ˈkælərɪ/    n. 卡（路里）， 大卡（食物的热量）
+van       /væn/        n. 运货车
+ventilation [ˌventɪ'leɪʃn] n. 空气流通；通风设备，通风方法
+
+intermediate* /ˏɪntəˈmiːdɪət/ a. 中间的，中级的
+eternal   /ɪˈtɜːnl/    a. 永恒的
+invasion* /ɪnˈveɪʒn/   n. 入侵，侵略
+reademe // 读我
+nevertheless /ˏnevəðəˈles/ ad. 仍然；然而  conj. 然而，不过
+celebrate* /ˈselɪbreɪt/ v. 赞扬，歌颂；庆祝
+
+inspiring* [ɪn'spaɪərɪŋ] a. 鼓舞（或激励）人心的；启发灵感的
+attendance* /əˈtendəns/ n. 到场，出席；出勤；伺候，照料
+optional* [ˈɒpʃənl]    a. 可选择的，非强制的，随意的
+enable*   /ɪˈneɪbl/    vt. 使能够，使成为可能
+
+frame // 框架
+word // 单词
+git // 极客
+select // 选择，挑选
+merge // 合并；巩固
+my // 我的
+new // 新的
+test // 测试2
+content // 内容
+content // 内容2
+study // 学习
+task // 任务，工作
+task // 任务2， 工作2
+from // 从哪里来
+hello // 你好
+reverse // 取反
+notion // 一个在线笔记
