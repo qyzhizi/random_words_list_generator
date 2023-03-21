@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import csv
-import re
 import os
 import sys
 import csv
@@ -13,10 +12,8 @@ EXPORT_NUM = 5
 
 def path_is_exist(file_path):
     if os.path.exists(file_path):
-        # print(f"File '{file_path}' exists in the current folder.")
         return True
     else:
-        # print(f"File '{file_path}' doesn't exist in the current folder.")
         return False
 
 
@@ -76,6 +73,7 @@ def export_5_words_md(shuffle_file_path, num, update=False):
         save_md(md_file_reversed_path, grouped_data_reversed, True)
         print("更新逆序md文档: ", md_file_reversed_path)
 
+
 def merge_csv_return_diff(a_name, b_name):
     # 读取表a和表b的数据
     table_a = pd.read_csv(a_name)
@@ -100,21 +98,17 @@ def merge_csv_return_diff(a_name, b_name):
 
     # 找出在表a中存在但在表b中不存在的行
     table_c = merged_table[merged_table['_merge'] == 'left_only']
-
     # 提取特定列数据
     df_new = table_c.iloc[:,:4]
-
     table_b = pd.concat([table_b,df_new])
 
     return table_a, table_b, df_new, duplicates
+
 
 def export_shuffle_csv(csv_file_path, update):
     shuffle_file_name = 'new_shuffle_'+os.path.basename(csv_file_path)
     shuffle_file_dir = os.path.dirname(csv_file_path)
     shuffle_file_path = os.path.join(shuffle_file_dir, shuffle_file_name)
-
-    # print(shuffle_file_path)
-
     # 如果不存在，则继续处理
     if not path_is_exist(shuffle_file_path):
         with open(csv_file_path, 'r', encoding='utf-8') as f:
@@ -122,7 +116,6 @@ def export_shuffle_csv(csv_file_path, update):
             rows = list(reader)
             head = rows[0]
             rows = rows[1:]
-
         random.shuffle(rows)
         with open(shuffle_file_path, 'w', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
@@ -146,9 +139,9 @@ def export_shuffle_csv(csv_file_path, update):
         if duplicates:
             table_a.to_csv(csv_file_path, mode='w', index=False)
             print("去重后的csv文档: ", shuffle_file_path)
-        
 
     return shuffle_file_path
+
 
 def get_shuffle_csv_and_md(csv_file_path, num=EXPORT_NUM, update=False):
     print("开始处理", "是否更新模式：", update)
@@ -162,7 +155,6 @@ def get_shuffle_csv_and_md(csv_file_path, num=EXPORT_NUM, update=False):
 if __name__ == '__main__':
     # 获取命令行参数列表
     args = sys.argv
-
     # 判断是否传入了参数
     if len(args) > 1:
         # 获取当前路径

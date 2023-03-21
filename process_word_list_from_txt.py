@@ -8,20 +8,19 @@ import pandas as pd
 # 音标匹配模式
 match_str_pa = [r'/.*?/', r'\[.*?\]',r'{.*?}']
 
+
 def file_is_exist(file_path):
 
     file_name = file_path.split("/")[-1]
 
     if os.path.exists(file_path):
-        # print(f"File '{file_name}' exists in the current folder.")
         return True
     else:
-        # print(f"File '{file_name}' doesn't exist in the current folder.")
         return False
+
 
 def process(file_path, update):
     out_path = file_path + '.csv'
-
     # 如果文件存在就算了
     if update == False and file_is_exist(out_path):
         print("csv文件已存在：", out_path )
@@ -37,9 +36,7 @@ def process(file_path, update):
             # 去除空行
             if line.strip():
                 # line = "chamber* /ˈtʃeɪmbə(r)/ n. 室；洞穴；（枪）膛"
-
                 line = line.strip()
-                # print("line:" ,line.strip('\n'))
                 match_str = None
                 for patten in match_str_pa:
                     match_str = re.findall(patten, line)
@@ -49,17 +46,13 @@ def process(file_path, update):
                         break
                 if not match_str:
                     continue
-                # print(match_str[0])
                 res = line.split(match_str[0])
                 res.insert(1, match_str[0])
-                # print("res: ", res)
-                # print("/n")
 
                 # 将每行内容与行号作为元组放入列表
                 yinbiao = " " * 2 + res[1].strip() + " " * 2 
                 a.append((line_num, res[0].strip(), yinbiao, res[2].strip()))
                 line_num += 1
-    
     
     # 构建csv表
     with open(out_path, 'w', newline='', encoding='utf-8') as csvfile:
